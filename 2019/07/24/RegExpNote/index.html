@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>RegExpNote | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="正则表达式中的特殊字符   字符 含义    \ 转义：在非特殊字符之前的反斜杠表示下一个字符是特殊的，不能从字面上解释   ^ 匹配输入的开始（定位符）eg:/^a/ 将会匹配以a开头的词   $ 匹配输入的结束（定位符）eg:/^a/将会匹配最后一个字母是a的词 ，bccca   * 匹配前一个表达式0次或者多次   + 匹配前一个表达式1次或者多次   ？ 匹配前一个表达式1次或者0次，如果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RegExpNote">
+<meta property="og:url" content="https://waringx.github.io/blog/2019/07/24/RegExpNote/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="正则表达式中的特殊字符   字符 含义    \ 转义：在非特殊字符之前的反斜杠表示下一个字符是特殊的，不能从字面上解释   ^ 匹配输入的开始（定位符）eg:/^a/ 将会匹配以a开头的词   $ 匹配输入的结束（定位符）eg:/^a/将会匹配最后一个字母是a的词 ，bccca   * 匹配前一个表达式0次或者多次   + 匹配前一个表达式1次或者多次   ？ 匹配前一个表达式1次或者0次，如果">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-24T06:07:42.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RegExpNote">
+<meta name="twitter:description" content="正则表达式中的特殊字符   字符 含义    \ 转义：在非特殊字符之前的反斜杠表示下一个字符是特殊的，不能从字面上解释   ^ 匹配输入的开始（定位符）eg:/^a/ 将会匹配以a开头的词   $ 匹配输入的结束（定位符）eg:/^a/将会匹配最后一个字母是a的词 ，bccca   * 匹配前一个表达式0次或者多次   + 匹配前一个表达式1次或者多次   ？ 匹配前一个表达式1次或者0次，如果">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://waringx.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-RegExpNote" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/07/24/RegExpNote/" class="article-date">
+  <time datetime="2019-07-24T06:06:57.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RegExpNote
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则表达式中的特殊字符"><a href="#正则表达式中的特殊字符" class="headerlink" title="正则表达式中的特殊字符"></a>正则表达式中的特殊字符</h1><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>转义：在非特殊字符之前的反斜杠表示下一个字符是特殊的，不能从字面上解释</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入的开始（定位符）eg:/^a/ 将会匹配以a开头的词</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入的结束（定位符）eg:/^a/将会匹配最后一个字母是a的词 ，bccca</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前一个表达式0次或者多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前一个表达式1次或者多次</td>
+</tr>
+<tr>
+<td>？</td>
+<td>匹配前一个表达式1次或者0次，如果紧跟在任何量词*、+、？或{}之后，将会使量词变为非贪婪的（匹配尽量少的字符）和缺省使用的贪婪模式（匹配尽可能多的字符）正好相反。eg:对于“123abc”应用/\d+/将会返回”123“，如果使用/\d+?/将会返回”1“</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符之外的任何单个字符</td>
+</tr>
+<tr>
+<td>(x)</td>
+<td>匹配x并且记住匹配项 ，x可以是一串字符（包括表达式）eg: “abc def abc def” 匹配模式/(abc) (def) \1 \2/ 其中\1，\2就是记住的匹配项(abc)和(def)</td>
+</tr>
+<tr>
+<td>(?:x)</td>
+<td>匹配x并且不记住匹配项，x可以是一串字符（包括表达式）</td>
+</tr>
+<tr>
+<td>x(?=y)</td>
+<td>匹配‘x’仅仅当’x’后面紧跟着’y’</td>
+</tr>
+<tr>
+<td>(?&lt;=y)x</td>
+<td>匹配’x’仅仅当’x’前面是’y’</td>
+</tr>
+<tr>
+<td>x(?!y)</td>
+<td>匹配’x’仅仅当’x’后面不是y</td>
+</tr>
+<tr>
+<td>(?&lt;!y)x</td>
+<td>匹配’x’仅仅当’x’前面不是y</td>
+</tr>
+<tr>
+<td>x|y</td>
+<td>匹配’x’或者’y’</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n是一个整数，匹配了前面一个字符刚好发生了n次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n和m都是整数，匹配前面的字符至少发生n次,最多m次</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>一个字符集合，匹配括号中的任意字符</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>一个反字符集合，匹配除括号中的字符之外的任意字符</td>
+</tr>
+<tr>
+<td>[\b]</td>
+<td>匹配一个退格</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个词的边界  /\bm/ 匹配”moooo”中的m，/o\b/匹配“moooo”中的最后一个o</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配一个<strong>非单词</strong>边界，匹配一个<strong>前后字符</strong>都是<strong>相同类型</strong>的<strong>位置</strong>，eg:/\B../匹配“noonday”中的”oo”，/y\B../匹配”possibly yesterday”中的”yes”</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>当X是处于A-Z之间的字符的时候，匹配字符串中的一个控制符，eg:/\cM/匹配字符串中的control-M(U+000D)</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字==[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字==[ ^ 0-9]</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配一个空白字符，包括空格，制表符，换页符，换行符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配一个非空白字符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个水平制表符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配一个单字字符（字母、数字、下划线）</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配一个非单字字符</td>
+</tr>
+<tr>
+<td>\1,\2,\3,\4,\n</td>
+<td>()中捕获的字符</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>匹配null字符</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>与代码hh匹配字符（两个十六进制数字）</td>
+</tr>
+<tr>
+<td>\uhhhh</td>
+<td>与代码hhhh匹配字符（4个十六进制数字）</td>
+</tr>
+<tr>
+<td>\u{hhhhh}</td>
+<td>使用Unicode值hhhh匹配字符（十六进制）</td>
+</tr>
+</tbody></table>
+<h1 id="正则表达式标志"><a href="#正则表达式标志" class="headerlink" title="正则表达式标志"></a>正则表达式标志</h1><table>
+<thead>
+<tr>
+<th>标志</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>g</td>
+<td>全局搜索</td>
+</tr>
+<tr>
+<td>i</td>
+<td>不区分大小写</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行搜索</td>
+</tr>
+<tr>
+<td>y</td>
+<td>执行粘贴搜索，匹配从目标字符串的当前位置开始，可以使用y标志</td>
+</tr>
+</tbody></table>
+<h1 id="正则表达式的使用方法"><a href="#正则表达式的使用方法" class="headerlink" title="正则表达式的使用方法"></a>正则表达式的使用方法</h1><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exec</td>
+<td>一个在字符串中执行查找匹配的RegExp方法，它返回一个数组（未匹配到则返回null）。</td>
+</tr>
+<tr>
+<td>test</td>
+<td>一个在字符串中测试是否匹配的RegExp方法，它返回true或false。</td>
+</tr>
+<tr>
+<td>match</td>
+<td>一个在字符串中执行查找匹配的String方法，它返回一个数组或者在未匹配到时返回null。</td>
+</tr>
+<tr>
+<td>search</td>
+<td>一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。</td>
+</tr>
+<tr>
+<td>split</td>
+<td>一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的String方法。</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://waringx.github.io/blog/2019/07/24/RegExpNote/" data-id="cjyguju4x0000kctob8v55yl7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2019/07/24/NginxConfNote/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">NginxConfNote</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/07/24/RegExpNote/">RegExpNote</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/07/24/NginxConfNote/">NginxConfNote</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/07/23/hello-world/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Lihuidong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
