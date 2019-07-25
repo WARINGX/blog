@@ -15,7 +15,7 @@
 <meta property="og:description" content="JVM笔记前言 堆（操作系统）：一般由程序员分配释放，若程序员不释放，则在程序结束时由操作系统回收 栈（操作系统）：由操作系统自动分配释放，存放函数的参数值，局部变量等 ​        JVM的内存是分布在操作系统的堆中的，因为操作系统的栈是操作系统管理的，它随时会被回收，所以如果JVM放在栈中，那Java的一个null对象就很难确定会被谁回收了，那GC的存在意义就没有了，而要堆栈做到自动释放也">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://images0.cnblogs.com/blog/502866/201402/241533100174700.jpg">
-<meta property="og:image" content="c:%5CUsers%5Clihuidong0001%5CDesktop%5CJVMnote.md">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201212/15/1355571501_9669.jpg">
 <meta property="og:image" content="https://img-blog.csdn.net/20180803130352336?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5saXV4aW4xMjM1MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/royi123/548096/o_609956274533007378.gif">
 <meta property="og:image" content="https://images0.cnblogs.com/blog/502866/201402/241533362431950.jpg">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20170531145431174?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTHVvbWluZ2t1aTExMDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/961610/201706/961610-20170618171609665-1743510461.png">
 <meta property="og:image" content="https://img-blog.csdn.net/20160704103050112?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2019-07-25T08:05:54.145Z">
+<meta property="og:updated_time" content="2019-07-25T08:19:20.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVMnote">
 <meta name="twitter:description" content="JVM笔记前言 堆（操作系统）：一般由程序员分配释放，若程序员不释放，则在程序结束时由操作系统回收 栈（操作系统）：由操作系统自动分配释放，存放函数的参数值，局部变量等 ​        JVM的内存是分布在操作系统的堆中的，因为操作系统的栈是操作系统管理的，它随时会被回收，所以如果JVM放在栈中，那Java的一个null对象就很难确定会被谁回收了，那GC的存在意义就没有了，而要堆栈做到自动释放也">
@@ -104,7 +104,7 @@
 <p><strong>Java代码编译</strong></p>
 <p><img src="https://images0.cnblogs.com/blog/502866/201402/241533100174700.jpg" alt="img"></p>
 <p><strong>JVM内存</strong></p>
-<p><img src="C:%5CUsers%5Clihuidong0001%5CDesktop%5CJVMnote.md" alt="1355571501_9669">、</p>
+<p><img src="https://img-my.csdn.net/uploads/201212/15/1355571501_9669.jpg" alt="img">、</p>
 <p><strong>程序计数器（Program Counter Register）</strong>:也叫PC寄存器，是一块较小的内存空间，它可以看做是当前线程所执行的字节码的行号指示器。在虚拟机的概念模型里，字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令、分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成。，（1），区别于计算机硬件的pc寄存器，两者不略有不同。计算机用pc寄存器来存放“伪指令”或地址，而相对于虚拟机，pc寄存器它表现为一块内存(一个字长，虚拟机要求字长最小为32位)，虚拟机的pc寄存器的功能也是存放伪指令，更确切的说存放的是将要执行指令的地址。（2）当虚拟机正在执行的方法是一个本地（native）方法的时候，jvm的pc寄存器存储的值是undefined。（3）程序计数器是线程私有的，它的生命周期与线程相同，每个线程都有一个。（4）此内存区域是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError情况的区域。</p>
 <p><strong>Java虚拟机栈（Java Virtual Machine Stack）</strong>：（1）线程私有的，它的生命周期与线程相同，每个线程都有一个。（2）每个线程创建的同时会创建一个JVM栈，JVM栈中每个栈帧存放的为当前线程中局部基本类型的变量（java中定义的八种基本类型：boolean、char、byte、short、int、long、float、double；和reference （32 位以内的数据类型，具体根据JVM位数（64为还是32位）有关，因为一个solt(槽）占用32位的内存空间 ）、部分的返回结果，非基本类型的对象在JVM栈上仅存放一个指向堆上的地址；（3）每一个方法从被调用直至执行完成的过程就对应着一个栈帧在虚拟机栈中从入栈到出栈的过程。（5）栈运行原理：栈中的数据都是以栈帧（Stack Frame）的格式存在，栈帧是一个内存区块，是一个数据集，是一个有关方法和运行期数据的数据集，当一个方法A被调用时就产生了一个栈帧F1，并被压入到栈中，A方法又调用了B方法，于是产生栈帧F2也被压入栈，B方法又调用了C方法，于是产生栈帧F3也被压入栈…… 依次执行完毕后，先弹出后进……F3栈帧，再弹出F2栈帧，再弹出F1栈帧。（6）JAVA虚拟机栈的最小单位可以理解为一个个栈帧，一个方法对应一个栈帧，一个栈帧可以执行很多指令，如下图：</p>
 <p><img src="https://img-blog.csdn.net/20180803130352336?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5saXV4aW4xMjM1MjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
